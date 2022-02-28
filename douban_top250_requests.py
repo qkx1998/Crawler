@@ -1,3 +1,9 @@
+'''
+Python爬虫时，更建议用requests库。
+requests比urllib更为便捷，requests可以直接构造get，post请求并发起，而urllib.request只能先构造get，post请求，再发起。
+
+'''
+
 import requests
 import re
 import json
