@@ -91,7 +91,8 @@ def get_data(base_url):
         #[2] 逐一解析模块：需要写在for循环里
         bs = BeautifulSoup(html, 'html.parser')
         # 查找符合要求的字符串，返回列表
-        for item in bs.find_all('div', class_='item'): #这一块需要根据浏览器访问页面的代码。匹配到我们需要的信息，再提取对应的代码
+        # 注意！！这一块需要根据浏览器访问页面的代码。匹配到我们需要的信息，再提取对应的代码。这里规定了 class_ = 'item'，要不然会找出多余的内容。
+        for item in bs.find_all('div', class_='item'): 
             
             data = [] #用于保存一部电影的所有信息
             item = str(item) #将内容转换为字符串
